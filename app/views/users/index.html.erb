@@ -4,6 +4,8 @@
   <% if current_user %>
       <h1><%= "Welcome #{current_user.name}" %></h1>
       <%= image_tag current_user.avatar.url(:thumb) %>
+      <%= render 'shared/new_document_form' %>
+
    <% else %>
       <div class="fade_login">
         <%= render 'shared/login_form' %>
