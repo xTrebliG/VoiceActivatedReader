@@ -1,0 +1,14 @@
+<h1>Behold The Voice Activated PDF Reader!</h1>
+
+<div class="loginbox">
+  <% if current_user %>
+      <h1><%= "Welcome #{current_user.name}" %></h1>
+   <% else %>
+      <div class="fade_login">
+        <%= render 'shared/login_form' %>
+      </div>
+      <div class="fade_signup">
+
+      </div>
+  <% end %>
+</div>
