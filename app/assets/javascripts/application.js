@@ -25,6 +25,10 @@ window.onload = function(){
 
             'Cameron': function() {
                 alert('WOW, Looks like a big baby!');
+            },
+
+            'sign up': function() {
+                $('.signup_link').trigger('click')
             }
 
         };
