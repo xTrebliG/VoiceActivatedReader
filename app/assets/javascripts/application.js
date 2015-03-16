@@ -18,11 +18,10 @@
 
 
 window.onload = function(){
-    $('#greeting').hide();
     if (annyang) {
         var commands = {
-            'Hello': greeting(),
-            'Hi' : greeting(),
+            'hello': greeting,
+            'hi' : greeting,
 
             'Cameron': function() {
                 alert('WOW, Looks like a big baby!');
@@ -38,5 +37,5 @@ window.onload = function(){
 
 
 var greeting = function() {
-    $('#greeting').append('hi!')
+    $('#greeting').append('<h1>Hello!</h1>');
 };
