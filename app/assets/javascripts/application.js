@@ -13,4 +13,30 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require annyang
 //= require_tree .
+
+
+window.onload = function(){
+    $('#greeting').hide();
+    if (annyang) {
+        var commands = {
+            'Hello': greeting(),
+            'Hi' : greeting(),
+
+            'Cameron': function() {
+                alert('WOW, Looks like a big baby!');
+            }
+
+        };
+        annyang.addCommands(commands);
+        annyang.debug();
+
+    }
+};
+
+
+
+var greeting = function() {
+    $('#greeting').append('hi!')
+};
