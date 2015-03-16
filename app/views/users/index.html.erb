@@ -3,6 +3,7 @@
 <div class="loginbox">
   <% if current_user %>
       <h1><%= "Welcome #{current_user.name}" %></h1>
+      <%= image_tag current_user.avatar.url(:thumb) %>
    <% else %>
       <div class="fade_login">
         <%= render 'shared/login_form' %>
