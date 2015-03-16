@@ -16,6 +16,9 @@
 !/log/.keep
 /tmp
 
+# Ignore Public Folder
+
+./public
 
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 
