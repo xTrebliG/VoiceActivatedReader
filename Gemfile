@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'annyang-rails'
 gem 'paperclip'
 gem 'aws-sdk'
-gem 's3_direct_upload'
+gem 's3_direct_upload', github: "waynehoover/s3_direct_upload"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

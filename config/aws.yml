@@ -1,0 +1,14 @@
+development:
+  access_key_id: AKIAJIPO6NOF6CZGU6WA
+  secret_access_key: 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
+  bucket: voicepdf
+
+test:
+   access_key_id: AKIAJIPO6NOF6CZGU6WA
+   secret_access_key: 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
+   bucket: voicepdf
+
+production:
+  access_key_id: AKIAJIPO6NOF6CZGU6WA
+  secret_access_key: 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
+  bucket: voicepdf

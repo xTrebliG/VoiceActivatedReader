@@ -12,11 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require s3_direct_upload
 //= require turbolinks
 //= require annyang
 //= require_tree .
-$(document).ready(function(){
 
+$(document).ready(function(){
+    $("#s3-uploader").S3Uploader();
     $('.login_form').hide();
 
 });

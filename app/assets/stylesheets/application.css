@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require s3_direct_upload_progress_bars
  */
 
 

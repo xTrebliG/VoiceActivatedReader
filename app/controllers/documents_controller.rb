@@ -16,7 +16,7 @@ class DocumentsController < ApplicationController
       redirect_to current_user
       flash[:notice] = 'New Document Uploaded!'
     else
-      render :new
+      redirect_to :back
       flash[:alert] = 'Document Failed To Upload!'
     end
 
@@ -41,7 +41,7 @@ class DocumentsController < ApplicationController
   end
 
   def doc_params
-    params.require(:document).permit(:title, :description, :pdf).merge(user_id: current_user.id)
+    params.require(:document).permit(:title, :description, :pdf_url).merge(user_id: current_user.id)
   end
 
 end
