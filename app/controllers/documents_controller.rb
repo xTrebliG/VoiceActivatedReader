@@ -6,11 +6,12 @@ class DocumentsController < ApplicationController
 
   def new
     @document = Document.new
+
   end
 
   def create
     @document = Document.new(doc_params)
-    @document.user_id = params[:user_id]
+    @document.user_id = current_user.id
     if @document.save
       redirect_to current_user
       flash[:notice] = 'New Document Uploaded!'

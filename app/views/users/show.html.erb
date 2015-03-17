@@ -1,2 +1,8 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= "Welcome #{current_user.name}" %></h1>
+
+
+<% @user.documents.each do |file| %>
+
+    <li><%= file.title %> | <%= file.created_at%></li>
+
+<% end %>

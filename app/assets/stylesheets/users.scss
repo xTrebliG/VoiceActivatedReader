@@ -1,3 +1,28 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.navbar {
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  /*border: 1px solid black;*/
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  color: white;
+
+  li {
+    display: inline-block;
+    float: right;
+    padding: 0 10px 0 0;
+  }
+
+  a:visited {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:link {
+    text-decoration: none;
+    color: white;
+  }
+}

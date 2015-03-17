@@ -1,4 +1,4 @@
-<%= form_tag(signin_path, method: :post) do %>
+<%= form_tag(signin_path, method: :post, class: 'login_form') do %>
 
     <h1>Log In</h1>
     <%= email_field_tag :email, nil, placeholder: 'Email' %>

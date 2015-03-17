@@ -15,9 +15,16 @@
 //= require turbolinks
 //= require annyang
 //= require_tree .
+$(document).ready(function(){
+
+    $('.login_form').hide();
+
+});
 
 
 window.onload = function(){
+
+
     if (annyang) {
         var commands = {
             'hello': greeting,

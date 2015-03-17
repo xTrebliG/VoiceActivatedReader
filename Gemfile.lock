@@ -38,6 +38,15 @@ GEM
       tzinfo (~> 1.1)
     annyang-rails (1.4.0)
     arel (6.0.0)
+    aws-sdk (2.0.30)
+      aws-sdk-resources (= 2.0.30)
+    aws-sdk-core (2.0.30)
+      builder (~> 3.0)
+      jmespath (~> 1.0)
+      multi_json (~> 1.0)
+      multi_xml (~> 0.5)
+    aws-sdk-resources (2.0.30)
+      aws-sdk-core (= 2.0.30)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -66,6 +75,12 @@ GEM
     jbuilder (2.2.11)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jmespath (1.0.2)
+      multi_json (~> 1.0)
+    jquery-fileupload-rails (0.4.4)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
+      sass (>= 3.2)
     jquery-rails (4.0.3)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -79,6 +94,7 @@ GEM
     mini_portile (0.6.2)
     minitest (5.5.1)
     multi_json (1.11.0)
+    multi_xml (0.5.5)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     paperclip (4.2.1)
@@ -119,6 +135,11 @@ GEM
     rb-readline (0.5.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    s3_direct_upload (0.1.7)
+      coffee-rails (>= 3.1)
+      jquery-fileupload-rails (~> 0.4.1)
+      rails (>= 3.1)
+      sass-rails (>= 3.1)
     sass (3.4.13)
     sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -161,6 +182,7 @@ PLATFORMS
 
 DEPENDENCIES
   annyang-rails
+  aws-sdk
   byebug
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
@@ -168,6 +190,7 @@ DEPENDENCIES
   paperclip
   quiet_assets
   rails (= 4.2.0)
+  s3_direct_upload
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

@@ -8,13 +8,31 @@
   <%= init_annyang %>
 </head>
 <body>
+<nav class="navbar">
+  <ul>
+    <li>
+      <% if current_user %>
+          <a><%= link_to 'Home', root_path %></a> |
+          <a><%= link_to 'Library', user_path(current_user)%></a> |
+          <a><%= link_to 'Sign Out', logout_path %></a>
+
+    </li>
+
+    <% else %>
+
+    <li>
+     <a><%= link_to 'Sign In', users_path, remote: true %></a>
+    </li>
+
+    <% end %>
+  </ul>
+</nav>
+<div id="spacer"></div>
 
 <%= flash[:notice] if flash[:notice] %>
 <%= flash[:alert] if flash[:alert] %>
 
-<% if current_user %>
-    <%= link_to 'Sign Out', logout_path %>
-<% end %>
+
 
 <%= yield %>
 
