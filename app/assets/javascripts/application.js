@@ -17,6 +17,8 @@
 //= require_tree .
 
 
+
+
 $(document).on('page:load',function(){
     $('.login_form').hide();
     $('.user_edit').hide();

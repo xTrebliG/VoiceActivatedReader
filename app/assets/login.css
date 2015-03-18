@@ -1,0 +1,32 @@
+.index_content {
+    margin: 0 auto;
+    height: 700px;
+    border: 1px solid black;
+
+}
+
+.index_ul {
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.index_jumbo {
+    border: none;
+    background-color: white;
+    height: 55%;
+}
+
+.info_1, .info_2, .info_3 {
+    width: 31%;
+    border: 1px solid green; //TEMP BORDER//
+display: inline-block;
+}
+
+.index_info {
+
+
+
+
+}
+

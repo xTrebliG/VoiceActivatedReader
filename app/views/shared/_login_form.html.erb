@@ -6,6 +6,6 @@
     <%= password_field_tag :password, nil, placeholder: 'Password' %>
     <br>
     <%= link_to 'Sign up', new_user_path, remote: true, class: 'signup_link'%>
-    <%= submit_tag 'Login' %>
+    <%= submit_tag 'Login', class: 'login_link'%>
 
 <% end %>

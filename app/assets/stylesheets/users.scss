@@ -1,6 +1,12 @@
 @import 'navbar';
 
 
+//REMOVED MARGIN FROM RIGHT/LEFT//
+body {
+  margin: 8px 0 8px 0;
+}
+
+
 //TEMP STYLING//
 .flashes {
   float: left;
@@ -71,3 +77,56 @@
 }
 
 //END TEMP STYLING//
+
+
+
+//OFFICIAL STYLING?//
+//.index_content {
+//  margin: 0 auto;
+//  height: 700px; //TEMP HEIGHT//
+//  border: 1px solid black; //TEMP BORDER//
+//
+//  .index_jumbo {
+//    border: 1px solid red; //TEMP BORDER//
+//    background-color: rgba(166, 166, 166, .6); //TEMP BG COLOR. WILL BE IMAGE//
+//    height: 55%;
+//  }
+//
+//  .index_ul {
+//    width: 100%;
+//    margin: 0 auto;
+//
+//
+//
+//    li {
+//
+//    }
+//
+//    .info_1, .info_2, .info_3 {
+//      width: 31%;
+//      border: 1px solid green; //TEMP BORDER//
+//      display: inline-block;
+//    }
+//
+//    .index_info {
+//
+//
+//
+//
+//    }
+//  }
+//}
+
+
+
+//END OFFICIAL STYLING//
+
+//MEDIA QUERIES//
+
+@media (max-width: 500px) {
+
+    .index_1, .index_2, .index_3{
+      float: left;
+    }
+
+}

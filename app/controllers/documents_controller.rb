@@ -1,11 +1,11 @@
 class DocumentsController < ApplicationController
-  require 'json'
 
   def index
 
   end
 
   def new
+
     @document = Document.new
 
   end
@@ -35,26 +35,7 @@ class DocumentsController < ApplicationController
   end
 
   def show
-    @response = `curl https://view-api.box.com/1/documents\ -H "Authorization: Token 7zzv7ix86tsj1np4n8rjp60zpda2mf5d"\
-              -H "Content-Type: application/json"\
-
-              -X POST `
-    p @response
-
-    if @response
-      @response2 = `curl https://view-api.box.com/1/documents\ -H "Authorization: Token 7zzv7ix86tsj1np4n8rjp60zpda2mf5d"\
-              -H "Content-Type: application/json"\ -d '{"document_id": "e31e55ce11c448f8aec5adfb6097082c", "duration": 60}' \
-              -X POST \
-              -i`
-    end
-
-    p @response2
-
-
-    def create_session
-
-
-    end
+    start_pdf_viewer
 
   end
 
@@ -76,6 +57,30 @@ class DocumentsController < ApplicationController
 
   def doc_params
     params.require(:document).permit(:title, :description, :pdf, :pdf_file_path).merge(user_id: current_user.id)
+  end
+
+  def start_pdf_viewer
+    response = `curl https://view-api.box.com/1/documents\ -H "Authorization: Token 7zzv7ix86tsj1np4n8rjp60zpda2mf5d"\
+              -H "Content-Type: application/json"\
+              -d '{"url": "#{current_document.pdf.url}"}' \
+              -X POST `
+
+    parsed_response = JSON.parse(response)
+    doc_id =  parsed_response['id']
+
+    sleep(5.0)
+
+    response2 = `curl https://view-api.box.com/1/sessions \ -H 'Authorization: Token 7zzv7ix86tsj1np4n8rjp60zpda2mf5d'\
+              -H "Content-Type: application/json"\ -d '{"document_id": "#{doc_id}", "duration": 60}' \
+              -X POST \
+              -i`
+
+    r = response2
+
+    final_response = JSON.parse(r.split("\n").last)
+    @pdf_session_id = final_response['id']
+
+    @document_url = "https://view-api.box.com/1/sessions/#{@pdf_session_id}/view?theme=light"
   end
 
 end

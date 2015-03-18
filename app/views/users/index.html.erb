@@ -1,27 +1,45 @@
-<div class="index_header">
-  <h1>Voice Activated PDF Reader!</h1>
+<div class="index_content">
+
+  <div class="index_jumbo">
+    <div class="index_header">
+      <h1>Voice Activated PDF Reader!</h1>
+    </div>
+
+    <div class="loginbox">
+
+      <% if current_user %>
+          <div class="user_info">
+            <h1><%= "Welcome #{current_user.name}" %></h1>
+            <%= image_tag current_user.avatar.url(:thumb) %>
+          </div>
+
+          <div class="user_upload">
+            <%= render 'shared/new_document_form' %>
+          </div>
+
+
+      <% else %>
+          <div class="fade_login">
+            <%= render 'shared/login_form' %>
+          </div>
+          <div class="fade_signup">
+
+          </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="index_info">
+    <ul class="index_ul">
+      <li class="info_1"><div>Test 1</div></li>
+      <li class="info_2"><div>Test 2</div></li>
+      <li class="info_3"><div>Test 3</div></li>
+    </ul>
+  </div>
+
 </div>
 
 
-<div class="loginbox">
-
-  <% if current_user %>
-      <div class="user_info">
-        <h1><%= "Welcome #{current_user.name}" %></h1>
-        <%= image_tag current_user.avatar.url(:thumb) %>
-      </div>
-
-      <div class="user_upload">
-        <%= render 'shared/new_document_form' %>
-      </div>
 
 
-   <% else %>
-      <div class="fade_login">
-        <%= render 'shared/login_form' %>
-      </div>
-      <div class="fade_signup">
 
-      </div>
-  <% end %>
-</div>
