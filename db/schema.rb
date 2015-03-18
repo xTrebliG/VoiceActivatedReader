@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20150317164819) do
     t.string   "pdf_content_type"
     t.integer  "pdf_file_size"
     t.datetime "pdf_updated_at"
-    t.string   "file_path"
+    t.string   "pdf_file_path"
   end
 
   create_table "users", force: :cascade do |t|

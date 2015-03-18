@@ -3,7 +3,8 @@ source 'https://rubygems.org'
 gem 'annyang-rails'
 gem 'paperclip'
 gem 'aws-sdk'
-gem 's3_direct_upload'
+gem 'paperclip-dropbox', '>= 1.1.7'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

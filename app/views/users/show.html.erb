@@ -1,8 +1,22 @@
-<h1><%= "Welcome #{current_user.name}" %></h1>
+<h1><%= "Welcome #{current_user.name}!" %></h1>
+<div class="user_info">
 
+  <%= image_tag(current_user.avatar.url(:thumb)) %>
+  <br/>
+  <%= link_to 'Update Info', user_path(current_user), method: :put, remote: true %>
+</div>
 
-<% @user.documents.each do |file| %>
+<div class="user_documents">
+  <% @user.documents.each do |file| %>
 
-    <li><%= file.title %> | <%= file.created_at%></li>
+      <li><%=link_to file.title, document_path(file.id) %> | <%= file.created_at%> | <%=link_to 'Delete', document_path(file.id), method: :delete  %></li>
+      <li><%= file.description %></li>
+      <br/>
 
-<% end %>
+  <% end %>
+</div>
+<div class="user_edit">
+
+    <%= render 'shared/edit_user_form' %>
+
+</div>

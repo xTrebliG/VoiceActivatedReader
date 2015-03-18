@@ -35,6 +35,24 @@ class UsersController < ApplicationController
 
   def update
 
+    respond_to do |format|
+      format.html { if @user.update(user_params)
+                      render :show
+                      flash[:notice]= 'Update Successful!'
+                    else
+                      flash[:alert]= "Looks like you don't have permission to do that!"
+                    end
+                  }
+      format.js
+    end
+
+    # if current_user.id == params[:id]
+    #
+    # else
+    #   flash[:notice]= "Whoops! You are unable to edit that user!"
+    #   render :show
+    # end
+
   end
 
   def destroy
@@ -43,12 +61,17 @@ class UsersController < ApplicationController
 
   private
 
+  def current_user
+    session[:user_id] ? User.find(session[:user_id]) :nil
+  end
+
   def user_params
     params.require(:user).permit(:name, :email, :password, :avatar)
   end
 
   def set_user
     @user = User.find(params[:id])
+
   end
 
 

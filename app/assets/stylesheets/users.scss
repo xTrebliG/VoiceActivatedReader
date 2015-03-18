@@ -1,28 +1,73 @@
+@import 'navbar';
 
 
-.navbar {
+//TEMP STYLING//
+.flashes {
+  float: left;
+  margin-top: 1%;
+  padding-left: 10px;
+}
+
+
+.index_header {
+  text-align: center;
+}
+
+.loginbox {
+  float: left;
   width: 100%;
-  height: 40px;
-  position: fixed;
-  /*border: 1px solid black;*/
-  background-color: rgba(0, 0, 0, 0.8);
-  top: 0;
-  left: 0;
-  color: white;
+}
+.user_info {
+  float: left;
+}
+
+.user_upload {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 75px;
+  padding: 10px;
+
+  .new_document {
+    width: 100%;
+    text-align: center;
+
+    input {
+      width: 70%;
+      margin: 5px;
+    }
+
+    #document_pdf {
+      margin-left: 35%;
+      padding: 5px;
+    }
+    #document_description{
+      width: 70%;
+    }
+
+  }
+
+}
+
+.user_documents {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px;
 
   li {
-    display: inline-block;
-    float: right;
-    padding: 0 10px 0 0;
-  }
-
-  a:visited {
-    color: white;
-    text-decoration: none;
-  }
-
-  a:link {
-    text-decoration: none;
-    color: white;
+    list-style-type: none;
   }
 }
+
+.user_edit {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 40%;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+//END TEMP STYLING//
