@@ -1,0 +1,9 @@
+<%= form_for @user, :url => user_path, method: :put, :html => { :multipart => true } do |f| %>
+    <h1>Update Your Info!</h1>
+    <%= f.text_field :name, placeholder: current_user.name %> <br/>
+    <%= f.email_field :email, placeholder: current_user.email %> <br/>
+    <%= f.password_field :password, placeholder: 'Password' %> <br/>
+    <%= f.file_field :avatar %> <br/>
+    <%= link_to 'Back', users_path %>
+    <%= f.submit %>
+<% end %>

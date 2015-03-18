@@ -4,6 +4,6 @@
     <%= f.email_field :email, placeholder: 'Email' %> <br/>
     <%= f.password_field :password, placeholder: 'Password' %> <br/>
     <%= f.file_field :avatar %> <br/>
-    <%= link_to 'Back', users_path %>
+    <%= link_to 'Back', users_path, class: 'back_link' %>
     <%= f.submit %>
 <% end %>

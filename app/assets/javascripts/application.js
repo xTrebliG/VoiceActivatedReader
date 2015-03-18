@@ -12,29 +12,31 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require s3_direct_upload
 //= require turbolinks
 //= require annyang
 //= require_tree .
 
-$(document).ready(function(){
-    $("#s3-uploader").S3Uploader();
+
+$(document).on('page:load',function(){
     $('.login_form').hide();
+    $('.user_edit').hide();
+
 
 });
 
 
 window.onload = function(){
-
+    $('.user_edit').hide();
+    $('.login_form').hide();
 
     if (annyang) {
         var commands = {
             'hello': greeting,
             'hi' : greeting,
 
-            'Cameron': function() {
-                alert('WOW, Looks like a big baby!');
-            },
+            'sign in':sign_in,
+            'back': back_link,
+
 
             'sign up': function() {
                 $('.signup_link').trigger('click')
@@ -51,4 +53,12 @@ window.onload = function(){
 
 var greeting = function() {
     $('#greeting').append('<h1>Hello!</h1>');
+};
+
+var sign_in = function() {
+    $('.signin_link').trigger('click')
+};
+
+var back_link = function() {
+    $('.back_link').trigger('click')
 };
