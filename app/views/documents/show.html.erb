@@ -1,5 +1,20 @@
 <div class="pdf_viewer">
 
-  <iframe src=<%=@document_url%> seamless allowfullscreen id='pdf_viewer'></iframe>
+  <!--<iframe src=<%=@document_url%> seamless allowfullscreen id='pdf_viewer'></iframe>-->
 
+  <nav class="clickme">
+    <%= link_to 'Previous', users_path, remote: true %>
+    <%= link_to 'Next', users_path, remote: true%>
+  </nav>
+  <div class="viewer" style="height: 800px">
+
+  </div>
+
+  <script type="text/javascript">
+      var viewer = Crocodoc.createViewer('.viewer', {
+          url: '<%=@document_url%>',
+          layout: Crocodoc.LAYOUT_HORIZONTAL
+      });
+      viewer.load();
+  </script>
 </div>

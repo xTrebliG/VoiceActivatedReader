@@ -24,12 +24,16 @@ $(document).on('page:load',function(){
     $('.user_edit').hide();
 
 
+
 });
 
 
 window.onload = function(){
     $('.user_edit').hide();
     $('.login_form').hide();
+    nextPage();
+
+
 
     if (annyang) {
         var commands = {
@@ -38,6 +42,17 @@ window.onload = function(){
 
             'sign in':sign_in,
             'back': back_link,
+            'go back': back_link(),
+
+            'next page': next_page,
+            'next': next_page,
+
+            'previous': last_page,
+            'previous page': last_page,
+            'last page': last_page,
+            'last': last_page,
+
+
 
 
             'sign up': function() {
@@ -64,3 +79,22 @@ var sign_in = function() {
 var back_link = function() {
     $('.back_link').trigger('click')
 };
+
+var next_page = function(){
+    viewer.scrollTo(Crocodoc.SCROLL_NEXT);
+
+};
+
+var last_page = function(){
+    viewer.scrollTo(Crocodoc.SCROLL_PREVIOUS);
+};
+
+function nextPage(){
+    $('.clickme').on('click', function(){
+        viewer.scrollTo(Crocodoc.SCROLL_NEXT);
+    });
+}
+
+
+
+

@@ -4,6 +4,8 @@ gem 'annyang-rails'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'paperclip-dropbox', '>= 1.1.7'
+gem 'thin'
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
