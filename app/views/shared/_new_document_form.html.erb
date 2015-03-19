@@ -3,5 +3,5 @@
     <%= f.text_field :title, placeholder: 'Title' %> <br/>
     <%= f.text_area :description, placeholder: 'Give A Short Description...' %> <br/>
     <%= f.file_field :pdf%> <br/>
-    <%= f.submit %>
+    <%= f.submit class: 'new_doc_submit', remote: true%>
 <% end %>

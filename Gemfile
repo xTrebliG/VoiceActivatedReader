@@ -4,7 +4,8 @@ gem 'annyang-rails'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'paperclip-dropbox', '>= 1.1.7'
-gem 'thin'
+gem 'bootstrap-sass', '~> 3.3.4'
+
 
 
 

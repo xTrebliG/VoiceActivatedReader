@@ -1,4 +1,5 @@
 class DocumentsController < ApplicationController
+  include DocumentsHelper
 
   def index
 
@@ -33,10 +34,12 @@ class DocumentsController < ApplicationController
 
   def update
 
+
   end
 
   def show
-    start_pdf_viewer
+    pdf_session_check
+
   end
 
   def destroy
@@ -57,37 +60,6 @@ class DocumentsController < ApplicationController
 
   def doc_params
     params.require(:document).permit(:title, :description, :pdf, :pdf_file_path, :cover).merge(user_id: current_user.id)
-  end
-
-  def start_pdf_viewer
-
-      response = `curl https://view-api.box.com/1/documents\ -H "Authorization: Token 7zzv7ix86tsj1np4n8rjp60zpda2mf5d"\
-              -H "Content-Type: application/json"\
-              -d '{"url": "#{current_document.pdf.url}"}' \
-              -X POST `
-
-      parsed_response = JSON.parse(response)
-      doc_id =  parsed_response['id']
-
-      sleep(3.0)
-
-      response2 = `curl https://view-api.box.com/1/sessions \ -H 'Authorization: Token 7zzv7ix86tsj1np4n8rjp60zpda2mf5d'\
-              -H "Content-Type: application/json"\ -d '{"document_id": "#{doc_id}", "duration": 60}' \
-              -X POST \
-              -i`
-
-      r = response2
-
-      final_response = JSON.parse(r.split("\n").last)
-      @pdf_session_id = final_response['id']
-
-      @document_url = "https://view-api.box.com/1/sessions/#{@pdf_session_id}/assets/"
-
-      # /view?theme=dark
-
-
-
-
   end
 
 end

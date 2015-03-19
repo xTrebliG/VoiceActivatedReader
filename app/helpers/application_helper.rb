@@ -4,6 +4,6 @@ module ApplicationHelper
   end
 
   def current_document
-    Document.find(params[:user_id, :id])
+    Document.find(params[:id])
   end
 end

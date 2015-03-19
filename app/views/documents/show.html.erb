@@ -1,17 +1,19 @@
 <div class="pdf_viewer">
 
 
-  <nav class="clickme">
-    <%= link_to 'Previous', users_path, remote: true %>
-    <%= link_to 'Next', users_path, remote: true%>
+  <nav>
+
+
+
   </nav>
+
   <div class="viewer" style="height: 800px">
 
   </div>
 
   <script type="text/javascript">
       var viewer = Crocodoc.createViewer('.viewer', {
-          url: '<%=@document_url%>',
+          url: '<%= current_document.pdf_session%>',
           layout: Crocodoc.LAYOUT_HORIZONTAL
       });
       viewer.load();

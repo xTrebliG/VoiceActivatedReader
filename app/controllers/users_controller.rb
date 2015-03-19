@@ -31,15 +31,14 @@ class UsersController < ApplicationController
 
   def show
 
-
   end
 
   def update
 
     respond_to do |format|
       format.html { if @user.update(user_params)
-                      render :show
                       flash[:notice]= 'Update Successful!'
+                      redirect_to @user
                     else
                       flash[:alert]= "Looks like you don't have permission to do that!"
                     end

@@ -3,3 +3,43 @@
   height: 800px;
 
 }
+
+
+
+
+
+.crocodoc-page {
+  /* 40px spacing around all sides of every page */
+  padding: 40px;
+}
+.crocodoc-page {
+  /* 40px spacing around the left and right sides of every page */
+  padding: 0 30px;
+}
+
+/* the following can be used in a layout with pages that are side-by-side to remove spacing in the middle (e.g., custom layout 'vertical-two-page') */
+.crocodoc-page {
+  padding: 20px;
+}
+.crocodoc-page:nth-child(even) {
+  padding-left: 0;
+}
+.crocodoc-page:nth-child(odd) {
+  padding-right: 0;
+}
+
+/* add a box-shadow to pages */
+.crocodoc-page-content {
+  box-shadow: 1px 1px 2px #000;
+}
+
+/* change the background color of pages */
+.crocodoc-page-content {
+  background-color: white;
+}
+
+///* add a spinner image to loading pages */
+//.crocodoc-page-loading .crocodoc-page-content {
+//  background: #FFF url('../images/spinner.gif') center center no-repeat;
+//}
+
