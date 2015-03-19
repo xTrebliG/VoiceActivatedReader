@@ -16,6 +16,7 @@ class DocumentsController < ApplicationController
     @document.pdf_file_path = params[:path]
 
     if @document.save
+
       redirect_to current_user
       flash[:notice] = 'New Document Uploaded!'
     else
@@ -55,7 +56,7 @@ class DocumentsController < ApplicationController
   end
 
   def doc_params
-    params.require(:document).permit(:title, :description, :pdf, :pdf_file_path).merge(user_id: current_user.id)
+    params.require(:document).permit(:title, :description, :pdf, :pdf_file_path, :cover).merge(user_id: current_user.id)
   end
 
   def start_pdf_viewer
@@ -68,7 +69,7 @@ class DocumentsController < ApplicationController
       parsed_response = JSON.parse(response)
       doc_id =  parsed_response['id']
 
-      sleep(2.0)
+      sleep(3.0)
 
       response2 = `curl https://view-api.box.com/1/sessions \ -H 'Authorization: Token 7zzv7ix86tsj1np4n8rjp60zpda2mf5d'\
               -H "Content-Type: application/json"\ -d '{"document_id": "#{doc_id}", "duration": 60}' \

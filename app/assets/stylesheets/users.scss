@@ -57,15 +57,27 @@ body {
 }
 
 .user_documents {
-  border: 1px solid black;
+//  border: 1px solid black;
   border-radius: 5px;
   width: 50%;
   margin: 0 auto;
   padding: 10px;
+  overflow: auto;
+
 
   li {
     list-style-type: none;
+    border: 1px solid black;
+
   }
+
+  .uploaded{
+    float: left;
+    width: 30%;
+    margin: 5px;
+    vertical-align: middle;
+  }
+
 }
 
 .user_edit {

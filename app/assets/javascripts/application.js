@@ -36,30 +36,7 @@ window.onload = function(){
 
 
     if (annyang) {
-        var commands = {
-            'hello': greeting,
-            'hi' : greeting,
 
-            'sign in':sign_in,
-            'back': back_link,
-            'go back': back_link(),
-
-            'next page': next_page,
-            'next': next_page,
-
-            'previous': last_page,
-            'previous page': last_page,
-            'last page': last_page,
-            'last': last_page,
-
-
-
-
-            'sign up': function() {
-                $('.signup_link').trigger('click')
-            }
-
-        };
         annyang.addCommands(commands);
         annyang.debug();
 
@@ -95,6 +72,31 @@ function nextPage(){
     });
 }
 
+
+var commands = {
+    'hello': greeting,
+    'hi' : greeting,
+
+    'sign in':sign_in,
+    'back': back_link,
+    'go back': back_link(),
+
+    'next page': next_page,
+    'next': next_page,
+
+    'previous': last_page,
+    'previous page': last_page,
+    'last page': last_page,
+    'last': last_page,
+
+
+
+
+    'sign up': function() {
+        $('.signup_link').trigger('click')
+    }
+
+};
 
 
 

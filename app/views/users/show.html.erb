@@ -7,10 +7,18 @@
 </div>
 
 <div class="user_documents">
+  <h1>Your Uploads!</h1>
   <% @user.documents.each do |file| %>
+      <% file.cover_file_name = file.pdf_file_name[0..-4] + 'jpg'.to_s %>
+      <% cover_url = "https://dl.dropboxusercontent.com/1/view/lk96ksjtfelt3o2/Apps/VoicePDF/documents/pdfs/#{file.id}/#{file.cover_file_name}" %>
+      <div class="uploaded">
+        <li><%=link_to file.title, document_path(file.id) %></li>
+        <li><%= file.description %></li>
+        <li><%= image_tag(file.pdf(:cover)) %></li>
+        <li><%=link_to 'Delete', document_path(file.id), method: :delete  %></li>
+      </div>
 
-      <li><%=link_to file.title, document_path(file.id) %> | <%= file.created_at%> | <%=link_to 'Delete', document_path(file.id), method: :delete  %></li>
-      <li><%= file.description %></li>
+
       <br/>
 
   <% end %>
