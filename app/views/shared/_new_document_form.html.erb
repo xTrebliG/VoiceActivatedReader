@@ -1,7 +1,15 @@
-<%= form_for [@user,@document], url: documents_path, html: { multipart: true } do |f| %>
-    <h1>Upload Your PDF!</h1>
-    <%= f.text_field :title, placeholder: 'Title' %> <br/>
-    <%= f.text_area :description, placeholder: 'Give A Short Description...' %> <br/>
-    <%= f.file_field :pdf%> <br/>
-    <%= f.submit class: 'new_doc_submit', remote: true%>
-<% end %>
+
+  <%= form_for [@user,@document], url: documents_path, html: { multipart: true } do |f| %>
+      <div class="form-group">
+        <h1>Upload Your PDF!</h1>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
+      </div>
+      <div class="form-group">
+        <%= f.file_field :pdf%>
+      </div>
+
+      <%= f.submit 'Upload!', class: 'new_doc_submit btn btn-default', remote: true%>
+
+  <% end %>

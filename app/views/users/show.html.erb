@@ -1,29 +1,65 @@
-<h1><%= "Welcome #{current_user.name}!" %></h1>
-<div class="user_info">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-2 col-sm-2 col-md-2">
+      <h1><%= "#{current_user.name}" %></h1>
+      <div class="user_info">
 
-  <%= image_tag(current_user.avatar.url(:thumb)) %>
-  <br/>
-  <%= link_to 'Update Info', user_path(current_user), method: :put, remote: true %>
-</div>
+        <%= image_tag(current_user.avatar.url(:thumb)) %>
+        <br/>
+        <%= link_to 'Update Info', user_path(current_user), method: :put, remote: true %>
 
-<div class="user_documents">
-  <h1>Your Uploads!</h1>
-  <% @user.documents.each do |file| %>
-      <% file.cover_file_name = file.pdf_file_name[0..-4] + 'jpg'.to_s %>
-      <% cover_url = "https://dl.dropboxusercontent.com/1/view/lk96ksjtfelt3o2/Apps/VoicePDF/documents/pdfs/#{file.id}/#{file.cover_file_name}" %>
-      <div class="uploaded">
-        <li><%=link_to file.title, document_path(file.id) %></li>
-        <li><%= file.description %></li>
-        <li><%= image_tag(file.pdf(:cover)) %></li>
-        <li><%=link_to 'Delete', document_path(file.id), method: :delete  %></li>
+        <div class="user_edit">
+
+          <%= render 'shared/edit_user_form' %>
+
+        </div>
       </div>
 
-      <br/>
+    </div>
+    <div class="clearfix visible-xs-block visible-sm-block"></div>
+    <div class="col-xs-10 col-sm-10 col-md-10">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <h1>Library</h1>
+        </div>
 
-  <% end %>
+        <div class="row">
+
+
+        <% @user.documents.reverse.each do |file| %>
+            <div class="col-xs-3 col-md-3 col-lg-3 user-library">
+              <div class="row">
+                    <div class="col-md-12">
+
+                      <%= div_for file do %>
+                        <li><h4><%= file.title %></h4></li>
+                        <li><%= link_to image_tag(file.pdf(:cover)), document_path(file.id), class: 'img-responsive' %></li>
+                        <li><%=link_to 'Delete', document_path(file.id), method: :delete, remote: true, class: 'delete_document_link'  %></li>
+                      <% end %>
+
+                    </div>
+              </div>
+
+            </div>
+            <div class="clearfix visible-xs-block "></div>
+
+        <% end %>
+
+        </div>
+      </div>
+
+
+      </div>
+
+    </div>
+  </div>
 </div>
-<div class="user_edit">
 
-    <%= render 'shared/edit_user_form' %>
 
-</div>
+
+
+
+
+
+
+

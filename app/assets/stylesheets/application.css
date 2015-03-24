@@ -14,12 +14,17 @@
  *= require_self
  */
 
+body {
+    text-align: center;
+    padding-top: 70px;
+}
 
+.navbar {
+    border-radius: 0;
+}
 
+.flashes {
+    padding-left: 40%;
+    padding-top: 15px;
 
-
-
-
-#spacer {
-    padding-top: 50px;
 }

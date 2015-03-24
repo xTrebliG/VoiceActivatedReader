@@ -6,10 +6,12 @@ class SessionsController < ApplicationController
     if @user and @user.password == params[:password]
       flash[:notice] = "Successfully signed in!"
       session[:user_id] = @user.id
+      redirect_to users_path
     else
       flash[:alert] = "Something went wrong."
+      render root_path
     end
-    redirect_to root_path
+
   end
 
   def destroy

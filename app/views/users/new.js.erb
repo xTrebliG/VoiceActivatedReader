@@ -1,4 +1,9 @@
-$('.fade_login').fadeOut(200);
+$('.fade_login').fadeOut("slow", function(){
+    var signin = $( "<div class='fade_login'><%= j render 'shared/new_user_form' %></div>").hide();
+    $(this).replaceWith(signin);
+    $('.fade_login').fadeIn('slow');
+});
 
-$('.fade_signup').hide().html("<%= j render 'shared/new_user_form' %> ").fadeIn(1500);
+//$('.fade_signup').hide().html("<%= j render 'shared/new_user_form' %> ").fadeIn(1500);
+//$('.fade_login').replaceWith(" ").hide();
 

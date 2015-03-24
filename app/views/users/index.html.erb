@@ -1,42 +1,53 @@
-<div class="index_content">
-
-  <div class="index_jumbo">
-    <div class="index_header">
-      <h1>Voice Controlled PDF Reader!</h1>
-    </div>
-    <div class="loginbox">
-
-      <% if current_user %>
-          <div class="user_info">
-            <h1><%= "Welcome #{current_user.name}" %></h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-3 col-sm-3 col-md-3 user_info">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <h2><%= "Welcome #{current_user.name}!" %></h2>
             <%= image_tag current_user.avatar.url(:thumb) %>
           </div>
+        </div>
 
-          <div class="user_upload">
-            <%= render 'shared/new_document_form' %>
-          </div>
-
-
-      <% else %>
-          <div class="fade_login">
-            <%= render 'shared/login_form' %>
-          </div>
-          <div class="fade_signup">
-
-          </div>
-      <% end %>
     </div>
+
+    <div class="clearfix visible-xs-block"></div>
+
+    <div class="col-xs-6 col-sm- col-md-6 user_upload">
+
+         <p><%= render 'shared/new_document_form' %></p>
+    </div>
+
+    <div class="col-xs-3 col-sm-3 col-md-3">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 ">
+          <h3>Last 5 Uploads</h3>
+          <% current_user.documents.last(5).reverse.each do |file| %>
+              <div class="row">
+                <div class="col-xs-12 col-md-12 col-sm-12 user-recent">
+                  <li><p><%= link_to file.title, document_path(file.id) %></p></li>
+                </div>
+              </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+
+
+    </div>
+
+
+
+
   </div>
 
-  <!--<div class="index_info">-->
-    <!--<ul class="index_ul">-->
-      <!--<li class="info_1"><div>Test 1</div></li>-->
-      <!--<li class="info_2"><div>Test 2</div></li>-->
-      <!--<li class="info_3"><div>Test 3</div></li>-->
-    <!--</ul>-->
-  <!--</div>-->
 
-</div>
+
+
+
+
+
+
 
 
 

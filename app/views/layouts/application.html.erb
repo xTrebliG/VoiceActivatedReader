@@ -4,34 +4,34 @@
   <title>VoiceActivated</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= csrf_meta_tags %>
   <%= init_annyang %>
 </head>
 <body>
-<nav class="navbar">
-  <span class="flashes"><%= flash[:notice] if flash[:notice] %>
-                            <%= flash[:alert] if flash[:alert] %></span>
-  <ul>
-    <li>
-      <% if current_user %>
-          <a><%= link_to 'Home', root_path %></a> |
-          <%= link_to 'Library', user_path(current_user)%> |
-          <a><%= link_to 'Sign Out', logout_path %></a>
 
-    </li>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">VOCONR</a>
 
-    <% else %>
+    </div>
+    <span class="flashes alert navbar-nav">
+      <%= flash[:notice] if flash[:notice] %>
+    </span>
+    <div>
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+            <li><%= link_to 'Home', users_path %></li>
+            <li><%= link_to 'Library', user_path(current_user)%></li>
+            <li><%= link_to 'Sign Out', logout_path, class: 'btn' %></li>
+        <% end %>
+      </ul>
 
-    <li>
-     <a><%= link_to 'Sign In', users_path, remote: true, class: 'signin_link' %></a>
-    </li>
+    </div>
 
-    <% end %>
-  </ul>
+  </div>
 </nav>
-<div id="spacer"></div>
-
-
 
 
 
@@ -41,3 +41,4 @@
 
 </body>
 </html>
+

@@ -1,140 +1,22 @@
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
-@import 'navbar';
-
-
-//REMOVED MARGIN FROM RIGHT/LEFT//
-body {
-  margin: 8px 0 8px 0;
+.jumbotron {
+  margin-top: -20px;
+//  background-image:image_url("bg.jpeg");
+//  background-size: cover;
 }
 
-
-//TEMP STYLING//
-.flashes {
-  float: left;
-  margin-top: 1%;
-  padding-left: 10px;
-}
-
-
-.index_header {
-  text-align: center;
-}
-
-.loginbox {
-  float: left;
-  width: 100%;
-}
-.user_info {
-  float: left;
-}
-
-.user_upload {
-  border: 1px solid black;
-  border-radius: 5px;
-  width: 50%;
-  margin: 0 auto;
-  margin-top: 75px;
-  padding: 10px;
-
-  .new_document {
-    width: 100%;
-    text-align: center;
-
-    input {
-      width: 70%;
-      margin: 5px;
-    }
-
-    #document_pdf {
-      margin-left: 35%;
-      padding: 5px;
-    }
-    #document_description{
-      width: 70%;
-    }
-
+.user-library {
+  li{
+    list-style-type: none;
   }
-
 }
 
-.user_documents {
-//  border: 1px solid black;
-  border-radius: 5px;
-  width: 50%;
-  margin: 0 auto;
-  padding: 10px;
-  overflow: auto;
-
+.user-recent {
 
   li {
     list-style-type: none;
-    border: 1px solid black;
-
   }
-
-
-
 }
 
-.user_edit {
-  border: 1px solid black;
-  border-radius: 5px;
-  width: 40%;
-  padding: 10px;
-  margin: 0 auto;
-}
-
-//END TEMP STYLING//
-
-
-
-//OFFICIAL STYLING?//
-//.index_content {
-//  margin: 0 auto;
-//  height: 700px; //TEMP HEIGHT//
-//  border: 1px solid black; //TEMP BORDER//
-//
-//  .index_jumbo {
-//    border: 1px solid red; //TEMP BORDER//
-//    background-color: rgba(166, 166, 166, .6); //TEMP BG COLOR. WILL BE IMAGE//
-//    height: 55%;
-//  }
-//
-//  .index_ul {
-//    width: 100%;
-//    margin: 0 auto;
-//
-//
-//
-//    li {
-//
-//    }
-//
-//    .info_1, .info_2, .info_3 {
-//      width: 31%;
-//      border: 1px solid green; //TEMP BORDER//
-//      display: inline-block;
-//    }
-//
-//    .index_info {
-//
-//
-//
-//
-//    }
-//  }
-//}
-
-
-
-//END OFFICIAL STYLING//
-
-//MEDIA QUERIES//
-
-@media (max-width: 500px) {
-
-    .index_1, .index_2, .index_3{
-      float: left;
-    }
-
-}

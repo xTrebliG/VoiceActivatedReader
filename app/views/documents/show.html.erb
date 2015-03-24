@@ -1,21 +1,79 @@
-<div class="pdf_viewer">
+<div class="container-fluid doc_show">
+  <div class="row">
 
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <ul class="nav nav-tabs">
+          <li role="presentation" class="previous_page_link"><a href="#">Previous Page</a></li>
+          <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+              Zoom <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li role="presentation" class="fit_zoom_link"><a href="#">Zoom Fit</a></li>
+              <li role="presentation" class="zoom_in_link"><a href="#">Zoom In</a></li>
+              <li role="presentation" class="zoom_out_link"><a href="#">Zoom Out</a></li>
+            </ul>
+          </li>
+          <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+              Layout <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li role="presentation" class="single_page_link"><a href="#">Single Page</a></li>
+              <li role="presentation" class="two_page_link"><a href="#">Two Pages</a></li>
+            </ul>
+          </li>
+          <li role="presentation" class="fullscreen_link"><a href="#">Fullscreen</a></li>
+          <li role="presentation" class="next_page_link"><a href="#">Next Page</a></li>
+        </ul>
+        <div class="row viewer_row">
+          <div class=" viewsize col-sm-12 col-xs-12 col-md-12">
+            <div class="viewer">
 
-  <nav>
+            </div>
+          </div>
 
+        </div>
 
+      </div>
 
-  </nav>
-
-  <div class="viewer" style="height: 800px">
-
+    </div>
   </div>
 
-  <script type="text/javascript">
-      var viewer = Crocodoc.createViewer('.viewer', {
-          url: '<%= current_document.pdf_session%>',
-          layout: Crocodoc.LAYOUT_HORIZONTAL
-      });
-      viewer.load();
-  </script>
-</div>
+
+
+
+
+
+    <!--Loads Voice Commands To Page-->
+    <script type="text/javascript">
+            var viewer = Crocodoc.createViewer('.viewer', {
+                url: '<%= current_document.pdf_session%>',
+                layout: Crocodoc.LAYOUT_HORIZONTAL,
+                plugins: {
+                    fullscreen: {
+                        element: '.viewer',
+                        useFakeFullscreen: true
+                    }
+                }
+            });
+
+
+            viewer.load();
+            viewer.on('ready', function (ev) {
+                viewer.zoom(Crocodoc.ZOOM_FIT_HEIGHT);
+                var pages = ev.data.numPages;
+
+                console.log(pages + ' pages');
+
+                navLinks();
+                annyang.removeCommands();
+                annyang.addCommands(commands2, true);
+            });
+
+
+    </script>
+
+
+
+

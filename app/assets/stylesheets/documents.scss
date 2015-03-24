@@ -1,21 +1,29 @@
-#pdf_viewer {
-  width: 99%;
-  height: 800px;
+.viewer{
+  height: 700px;
+}
+html, body{height: 100%;}
+.doc_show {
+  height: 100%
+}
 
+.viewsize {
+  height: 100%;
+}
+
+.viewer_row {
+  height: 100%;
 }
 
 
 
-
-
-.crocodoc-page {
-  /* 40px spacing around all sides of every page */
-  padding: 40px;
-}
-.crocodoc-page {
-  /* 40px spacing around the left and right sides of every page */
-  padding: 0 30px;
-}
+//.crocodoc-page {
+//  /* 40px spacing around all sides of every page */
+//  padding: 40px;
+//}
+//.crocodoc-page {
+//  /* 40px spacing around the left and right sides of every page */
+//  padding: 0 40px;
+//}
 
 /* the following can be used in a layout with pages that are side-by-side to remove spacing in the middle (e.g., custom layout 'vertical-two-page') */
 .crocodoc-page {
@@ -38,8 +46,4 @@
   background-color: white;
 }
 
-///* add a spinner image to loading pages */
-//.crocodoc-page-loading .crocodoc-page-content {
-//  background: #FFF url('../images/spinner.gif') center center no-repeat;
-//}
 

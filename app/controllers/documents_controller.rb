@@ -1,7 +1,12 @@
 class DocumentsController < ApplicationController
   include DocumentsHelper
+  require "webrick/https"
+  skip_before_filter  :verify_authenticity_token
 
   def index
+    if current_user
+      redirect_to users_path
+    end
 
   end
 
@@ -9,26 +14,31 @@ class DocumentsController < ApplicationController
 
     @document = Document.new
 
+
+
   end
 
   def create
     @document = Document.new(doc_params)
     @document.user_id = current_user.id
     @document.pdf_file_path = params[:path]
+    respond_to do |f|
 
-    if @document.save
-
-      redirect_to current_user
-      flash[:notice] = 'New Document Uploaded!'
-    else
-      redirect_to :back
-      flash[:alert] = 'Document Failed To Upload!'
-
-      if @document.errors.any?
-         puts @document.errors.full_messages
+      sleep(1.0)
+      if @document.save
+        f.html{
+          redirect_to user_path(@document.user_id)
+          flash[:notice] = 'New Document Uploaded!'
+        }
+      else
+        f.html{
+          redirect_to :back
+          flash[:alert] = 'Document Failed To Upload!' }
+        f.js
       end
 
     end
+
 
   end
 
@@ -43,8 +53,15 @@ class DocumentsController < ApplicationController
   end
 
   def destroy
+    @doc_id = "#document_#{current_document.id}"
+    p @doc_id
+
+    respond_to do |f|
+      f.js {
+      }
+    end
+
     current_document.destroy
-    redirect_to current_user
 
   end
 
