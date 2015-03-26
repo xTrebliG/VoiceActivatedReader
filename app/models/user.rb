@@ -13,5 +13,4 @@ class User < ActiveRecord::Base
                         path: ':class/:attachment/:id/:filename'}
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
-
 end
