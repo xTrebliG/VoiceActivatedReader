@@ -3,9 +3,10 @@
 
 .jumbotron {
   margin-top: -20px;
-  background-image: url('/assets/bg1.jpg');
+  background-image: url('https://s3.amazonaws.com/voicepdf/images/deskimage.jpg');
   background-size: cover;
 }
+
 
 .user-library {
   li{
@@ -24,4 +25,8 @@
 .thumbnail {
 //  border: none;
   height: 350px;
+}
+
+.user-info{
+  margin: 0 auto;
 }

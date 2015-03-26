@@ -25,7 +25,7 @@ class UsersController < ApplicationController
           flash[:notice] = 'Thanks For Signing Up!'
     else
       if @user.errors.any?
-        flash[:alert] = @user.errors.full_messages
+        flash[:notice] = @user.errors.full_messages
       end
           # flash[:alert] = "Whoops That Didn't Work!"
           redirect_to root_path
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
                       flash[:notice]= 'Update Successful!'
                       redirect_to @user
                     else
-                      flash[:alert]= "Looks like you don't have permission to do that!"
+                      flash[:notice]= "Looks like you don't have permission to do that!"
                     end
                   }
       format.js
@@ -59,7 +59,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
-
+    current_user.destroy
+    session[:user_id] = nil
+    redirect_to root_path
   end
 
   private

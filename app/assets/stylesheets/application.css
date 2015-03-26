@@ -17,6 +17,9 @@
 body {
     text-align: center;
     padding-top: 70px;
+    background-image: url('/assets/creampaper.png');
+    background-size: auto;
+
 }
 
 .navbar {

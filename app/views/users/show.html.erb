@@ -1,21 +1,41 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row">
-    <div class="col-xs-2 col-sm-2 col-md-2">
-      <h1><%= "#{current_user.name}" %></h1>
-      <div class="user_info">
-        <%= image_tag(current_user.avatar.url(:thumb)) %>
-        <br/>
-        <%= link_to 'Update Info', user_path(current_user), method: :put, remote: true %>
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+      <div class="row">
+        <div class="col-md-12 col-lg-12 user-info">
+          <h1><%= "#{current_user.name}" %></h1>
+          <div class="user_info">
+            <%= image_tag(current_user.avatar.url(:thumb)) %>
+            <br/>
+            <%= link_to 'Update Info', user_path(current_user), method: :put, remote: true %>
 
-        <div class="user_edit">
 
-          <%= render 'shared/edit_user_form' %>
+          </div>
+        </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="user_edit">
 
+            <%= render 'shared/edit_user_form' %>
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h4>Tip:</h4>
+          <p>
+            You can edit the name of your PDF Just by clicking the name!
+          </p>
         </div>
       </div>
 
+
+
+      </div>
+
     </div>
-    <div class="clearfix visible-xs-block visible-sm-block"></div>
+    <div class="clearfix visible-xs-block"></div>
     <div class="col-xs-10 col-sm-10 col-md-10">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -26,8 +46,6 @@
             <div class="col-md-12">
               <%= render 'documents/user_library' %>
             </div>
-
-
         </div>
       </div>
 

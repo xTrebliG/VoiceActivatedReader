@@ -16,6 +16,8 @@
       <%= f.file_field :avatar, placeholder: 'Upload Pic'%>
     </div>
 
+    <%= f.submit 'Update',class: 'btn btn-default'%>
     <%= link_to 'Back', user_path(current_user), class: 'back_link btn btn-default' %>
-    <%= f.submit class: 'btn btn-default'%>
+    <br/>
+    <%= link_to 'Delete Account', user_path(current_user), method: :delete, data: {confirm:'Are you sure you want to send your account to the fiery pits of Mordor!?'}  %>
 <% end %>

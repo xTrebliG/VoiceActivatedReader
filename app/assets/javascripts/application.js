@@ -82,7 +82,7 @@ function hideElements(){
     $('.hide_me').hide();
 
     $('.new_doc_submit').on('click', function(){
-        $(this).replaceWith("<img src='assets/ajax-loader.gif'><br><p>Uploading...</p>");
+        $(this).replaceWith("<img src='https://s3.amazonaws.com/voicepdf/images/ajax-loader.gif'><br><p>Uploading...</p>");
         $('form').submit();
     });
 } //ELEMENTS THAT NEED TO BE HIDDEN ON PAGE LOAD//
