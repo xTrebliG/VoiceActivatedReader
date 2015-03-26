@@ -14,7 +14,20 @@
 
     <div class="col-xs-6 col-sm- col-md-6 user_upload">
 
-         <p><%= render 'shared/new_document_form' %></p>
+      <p><%= render 'shared/new_document_form' %></p>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Upload Restrictions</h3>
+          <ul class="list-group">
+            <li class="list-group-item">File must be in PDF format</li>
+            <li class="list-group-item">File must not exceed 150MB</li>
+            <li class="list-group-item">You must enter a title name</li>
+            <li class="list-group-item">At this time only 1 file upload at a time</li>
+          </ul>
+        </div>
+      </div>
+
     </div>
 
     <div class="col-xs-3 col-sm-3 col-md-3">

@@ -46,6 +46,9 @@ GEM
     aws-sdk-v1 (1.63.0)
       json (~> 1.4)
       nokogiri (>= 1.4.4)
+    best_in_place (3.0.3)
+      actionpack (>= 3.2)
+      railties (>= 3.2)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.4.1)
@@ -185,6 +188,7 @@ PLATFORMS
 DEPENDENCIES
   annyang-rails
   aws-sdk (< 2.0)
+  best_in_place (~> 3.0.1)
   bootstrap-sass (~> 3.3.4)
   byebug
   coffee-rails (~> 4.1.0)

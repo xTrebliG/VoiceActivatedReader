@@ -3,13 +3,14 @@
 
 .jumbotron {
   margin-top: -20px;
-//  background-image:image_url("bg.jpeg");
-//  background-size: cover;
+  background-image: url('/assets/bg1.jpg');
+  background-size: cover;
 }
 
 .user-library {
   li{
     list-style-type: none;
+    display: inline-block;
   }
 }
 
@@ -20,3 +21,7 @@
   }
 }
 
+.thumbnail {
+//  border: none;
+  height: 350px;
+}

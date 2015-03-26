@@ -6,6 +6,7 @@ gem 'paperclip-dropbox', '>= 1.1.7'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'font-awesome-sass'
 gem 'aws-sdk', '<2.0'
+gem 'best_in_place', '~> 3.0.1'
 
 
 

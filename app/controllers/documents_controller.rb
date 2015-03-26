@@ -33,7 +33,7 @@ class DocumentsController < ApplicationController
       else
         f.html{
           redirect_to :back
-          flash[:alert] = 'Document Failed To Upload!' }
+          flash[:notice] = 'Document Failed To Upload!' }
         f.js
       end
 
@@ -43,6 +43,16 @@ class DocumentsController < ApplicationController
   end
 
   def update
+    respond_to do |f|
+      @document = Document.find params[:id]
+      if @document.update_attributes(doc_title_params)
+        f.html{redirect_to current_user, notice: 'Document Updated Successfully!'}
+        f.json{respond_with_bip(@document)}
+      else
+        f.html { render :action => "edit" }
+        f.json{respond_with(@document)}
+      end
+    end
 
 
   end
@@ -78,5 +88,10 @@ class DocumentsController < ApplicationController
   def doc_params
     params.require(:document).permit(:title, :description, :pdf, :pdf_file_path, :cover).merge(user_id: current_user.id)
   end
+
+  def doc_title_params
+    params.require(:document).permit(:title)
+  end
+
 
 end

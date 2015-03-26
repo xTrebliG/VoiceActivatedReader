@@ -11,6 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require best_in_place
+//= require jquery-ui
+//= require best_in_place.jquery-ui
 //= require jquery_ujs
 //= require turbolinks
 //= require annyang
@@ -24,14 +27,14 @@
 $(document).on('page:load',function(){
    hideElements();
     addVoiceCommands();
+    $('.best_in_place').best_in_place();
 });
 
 
 window.onload = function(){
     hideElements();
     addVoiceCommands();
-
-
+    $('.best_in_place').best_in_place();
 
 };
 

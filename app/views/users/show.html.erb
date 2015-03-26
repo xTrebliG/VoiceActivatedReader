@@ -3,7 +3,6 @@
     <div class="col-xs-2 col-sm-2 col-md-2">
       <h1><%= "#{current_user.name}" %></h1>
       <div class="user_info">
-
         <%= image_tag(current_user.avatar.url(:thumb)) %>
         <br/>
         <%= link_to 'Update Info', user_path(current_user), method: :put, remote: true %>
@@ -24,26 +23,10 @@
         </div>
 
         <div class="row">
-
-
-        <% @user.documents.reverse.each do |file| %>
-            <div class="col-xs-3 col-md-3 col-lg-3 user-library">
-              <div class="row">
-                    <div class="col-md-12">
-
-                      <%= div_for file do %>
-                        <li><h4><%= file.title %></h4></li>
-                        <li><%= link_to image_tag(file.pdf(:cover)), document_path(file.id), class: 'img-responsive' %></li>
-                        <li><%=link_to 'Delete', document_path(file.id), method: :delete, remote: true, class: 'delete_document_link'  %></li>
-                      <% end %>
-
-                    </div>
-              </div>
-
+            <div class="col-md-12">
+              <%= render 'documents/user_library' %>
             </div>
-            <div class="clearfix visible-xs-block "></div>
 
-        <% end %>
 
         </div>
       </div>

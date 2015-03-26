@@ -21,10 +21,17 @@ body {
 
 .navbar {
     border-radius: 0;
+    border:none;
+    background-color: black;
 }
 
 .flashes {
     padding-left: 40%;
     padding-top: 15px;
+
+}
+
+.page-header hr{
+    opacity: 1;
 
 }
