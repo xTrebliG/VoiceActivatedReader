@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update, :show, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -33,6 +33,17 @@ class UsersController < ApplicationController
   end
 
   def show
+
+  if User.exists?(params[:id])
+    @user = User.find(params[:id])
+    p get_id = User.find(params[:id])
+    p check_library = get_id[:id]
+   if params[:id] != "#{current_user.id}"
+     redirect_to current_user
+   end
+  else
+    redirect_to current_user
+  end
 
   end
 

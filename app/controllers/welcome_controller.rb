@@ -1,7 +1,13 @@
 class WelcomeController < ApplicationController
   def index
-    if current_user
-      redirect_to users_path
+    respond_to do |f|
+      f.html{
+          if current_user
+            redirect_to users_path
+          end
+      }
+      f.js
+
     end
   end
 

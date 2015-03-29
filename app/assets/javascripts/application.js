@@ -110,6 +110,7 @@ function allOnClicks(){
         $('.after_view_command').fadeIn();
     })
 
+
 }
 
 //FUNCTIONS FOR VOICE COMMANDS//

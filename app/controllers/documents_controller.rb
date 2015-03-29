@@ -58,7 +58,19 @@ class DocumentsController < ApplicationController
   end
 
   def show
-    pdf_session_check
+    if Document.exists?(params[:id])
+     if current_document.user_id == current_user.id
+       pdf_session_check
+     else
+       redirect_to current_user
+       flash[:notice] = 'Oops! You Dont Have Access To That!'
+     end
+    else
+      redirect_to current_user
+      flash[:notice] = 'Oops! Something went wrong!'
+    end
+
+
 
   end
 
