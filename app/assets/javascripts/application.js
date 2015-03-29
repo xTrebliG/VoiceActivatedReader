@@ -23,18 +23,25 @@
 
 
 
-
 $(document).on('page:load',function(){
    hideElements();
-    addVoiceCommands();
     $('.best_in_place').best_in_place();
+    allOnClicks();
+    if (annyang) {
+        annyang.addCommands(commands);
+        annyang.debug();
+    }
 });
 
 
 window.onload = function(){
     hideElements();
-    addVoiceCommands();
     $('.best_in_place').best_in_place();
+    allOnClicks();
+    if (annyang) {
+        annyang.addCommands(commands);
+        annyang.debug();
+    }
 
 };
 
@@ -80,20 +87,30 @@ function hideElements(){
 
     $('.user_edit').hide();
     $('.hide_me').hide();
+    $('.how_to').hide();
+    $('.after_view_command').hide();
 
+
+} //ELEMENTS THAT NEED TO BE HIDDEN ON PAGE LOAD//
+
+
+
+//ON CLICK FUNCTIONS//
+
+function allOnClicks(){
     $('.new_doc_submit').on('click', function(){
         $(this).replaceWith("<img src='https://s3.amazonaws.com/voicepdf/images/ajax-loader.gif'><br><p>Uploading...</p>");
         $('form').submit();
     });
-} //ELEMENTS THAT NEED TO BE HIDDEN ON PAGE LOAD//
 
-function addVoiceCommands(){
-    if (annyang) {
-        annyang.addCommands(commands);
-        annyang.debug();
-    }
-} //ENABLES VOICE RECOGNITION//
+    $('.view_commands').on('click', function(){
+        $('.hide_upload').fadeOut();
+        $('.how_to').fadeIn();
+        $(this).hide();
+        $('.after_view_command').fadeIn();
+    })
 
+}
 
 //FUNCTIONS FOR VOICE COMMANDS//
     var sign_in = function() {

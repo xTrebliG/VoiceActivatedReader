@@ -5,6 +5,13 @@
           <div class="col-xs-12 col-sm-12 col-md-12">
             <h2><%= "Welcome #{current_user.name}!" %></h2>
             <%= image_tag current_user.avatar.url(:thumb) %>
+            <br/>
+
+            <br/>
+            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal">
+              <%= link_to 'View Commands', '#'%>
+            </button>
+            <%= link_to 'Upload File', '#', class: 'after_view_command' %>
           </div>
         </div>
 
@@ -13,6 +20,9 @@
     <div class="clearfix visible-xs-block"></div>
 
     <div class="col-xs-6 col-sm- col-md-6 user_upload">
+      <div class="hide_upload">
+
+
 
       <p><%= render 'shared/new_document_form' %></p>
 
@@ -27,7 +37,7 @@
           </ul>
         </div>
       </div>
-
+      </div>
     </div>
 
     <div class="col-xs-3 col-sm-3 col-md-3">
@@ -49,7 +59,7 @@
 
     </div>
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-12 how_to">
         <h3>Commands You Can Use In The PDF Viewer!</h3>
 
         <div class="row">
@@ -130,6 +140,84 @@
       </div>
 
     </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 class="modal-title" id="myModalLabel">Commands You Can Use When Viewing Your PDF!</h3>
+        </div>
+        <div class="modal-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <h4 class="list-group-item-heading">To go to the next page you can say:</h4>
+                  <ul class="list-group">
+                    <li class="list-group-item">"Next Page"</li>
+                    <li class="list-group-item">"Next"</li>
+                    <li class="list-group-item">"Next Slide"</li>
+                    <li class="list-group-item">"Forward"</li>
+                  </ul>
+                </div>
+
+                <div class="col-md-4">
+                  <h4 class="list-group-item-heading">To go to the previous page you can say:</h4>
+                  <ul class="list-group">
+                    <li class="list-group-item">"Previous"</li>
+                    <li class="list-group-item">"Previous Page"</li>
+                    <li class="list-group-item">"Back"</li>
+                  </ul>
+                </div>
+
+                <div class="col-md-4">
+                  <h4 class="list-group-item-heading">Why not zoom in? You can say:</h4>
+                  <ul class="list-group">
+                    <li class="list-group-item">"Zoom"</li>
+                    <li class="list-group-item">"Zoom In"</li>
+                    <li class="list-group-item">"Zoom Closer"</li>
+                    <li class="list-group-item">"Closer"</li>
+                    <li class="list-group-item">"Move In"</li>
+                    <li class="list-group-item">"Move Closer"</li>
+                  </ul>
+                </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <h4 class="list-group-item-heading">Want to zoom out? Say:</h4>
+                  <ul class="list-group">
+                    <li class="list-group-item">"Zoom out"</li>
+                    <li class="list-group-item">"Zoom Away"</li>
+                    <li class="list-group-item">"Zoom Fit"</li>
+                    <li class="list-group-item">"Fit Page"</li>
+                    <li class="list-group-item">"Fit Screen"</li>
+                    <li class="list-group-item">"Show All"</li>
+                  </ul>
+                </div>
+
+                <div class="col-md-6">
+                  <h4 class="list-group-item-heading">Want to change the layout? Say:</h4>
+                  <ul class="list-group">
+                    <li class="list-group-item">"Single Page"</li>
+                    <li class="list-group-item">"Single Page Layout"</li>
+                    <li class="list-group-item">"Single Page Zoom"</li>
+                    <li class="list-group-item">"Show One Page"</li>
+                    <li class="list-group-item">"Show Only One Page"</li>
+                    <li class="list-group-item">"Show Two Page(s)"</li>
+                    <li class="list-group-item">"Show Two Page(s) Layout"</li>
+                    <li class="list-group-item">"Two Page(s) View"</li>
+                    <li class="list-group-item">"Two Page(s) Layout"</li>
+                    <li class="list-group-item">"Two Page(s)"</li>
+                  </ul>
+                </div>
+
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   </div>
 
