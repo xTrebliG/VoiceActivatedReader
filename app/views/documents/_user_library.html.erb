@@ -1,6 +1,6 @@
 
 <% @user.documents.reverse.each do |file| %>
-    <div class="col-sm-6 col-md-4 doc-height">
+    <div class="col-sm-6 col-md-6 col-lg-4 doc-height">
       <%= div_for file do %>
           <div class="thumbnail">
             <h3><%= best_in_place file, :title, :as => :input %></h3>
