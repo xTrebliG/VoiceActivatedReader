@@ -14,7 +14,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -27,17 +27,25 @@
       <%= flash[:notice] if flash[:notice] %>
     </span>
     <div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
 
+      <div class="collapse navbar-collapse navbar-links" >
+      <ul class="nav navbar-nav navbar-right visible-xs-block" id="myNavBar">
         <% if current_user %>
             <li><%= link_to 'Home', users_path %></li>
             <li><%= link_to 'Library', user_path(current_user)%></li>
             <li><%= link_to 'Sign Out', logout_path, class: 'btn' %></li>
         <% end %>
       </ul>
+        <ul class="nav navbar-nav navbar-right hidden-xs" >
+          <% if current_user %>
+              <li><%= link_to 'Home', users_path %></li>
+              <li><%= link_to 'Library', user_path(current_user)%></li>
+              <li><%= link_to 'Sign Out', logout_path, class: 'btn' %></li>
+          <% end %>
+        </ul>
 
     </div>
+
     </div>
   </div>
 </nav>
