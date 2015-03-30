@@ -4,6 +4,7 @@
   width: 50%;
   margin: 0 auto;
   padding: 10px;
+  padding-bottom: 40px;
 
   #user_avatar {
     margin: 0 auto;
@@ -12,10 +13,25 @@
 
 }
 
+
 .try-test {
   background-color: rgba(166,166,166, 0.4);
   border-radius: 5px;
   margin: 0 auto;
   padding: 10px;
 
+}
+
+
+.welcome-h {
+  font-family: 'Arvo', serif;
+  font-weight: 700;
+  text-shadow: 5px 5px 5px white;
+}
+
+.welcome-p {
+  font-family: 'Arvo', serif;
+  font-weight: 400;
+  font-style: italic;
+  text-shadow: 3px 3px 5px white;
 }
