@@ -14,14 +14,9 @@ class WelcomeController < ApplicationController
   def parallax
     @user = User.new
       render :layout => false
-      respond_to do |f|
-        f.html{
           if current_user
             redirect_to users_path
           end
-        }
-        f.js
-      end
   end
 
   private
