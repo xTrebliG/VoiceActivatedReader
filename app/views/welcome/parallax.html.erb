@@ -11,15 +11,9 @@
 
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-  <link rel="stylesheet" href="/assets/stylesheets/parallax.scss">
-  <script src="/assets/javascripts/jquery.min.js"></script>
-
-
-
-
-
-
-
+  <%= stylesheet_link_tag '_bootstrap' %>
+  <%= stylesheet_link_tag 'parallax.css' %>
+  <%= javascript_include_tag 'jquery.min.js' %>
 
 </head>
 <body>
@@ -150,7 +144,6 @@
 
 
 
-
-<script src="/assets/javascripts/parallax.js"></script>
+<%= javascript_include_tag 'parallax.js' %>
 </body>
 </html>

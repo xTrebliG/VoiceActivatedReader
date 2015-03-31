@@ -1,4 +1,3 @@
-@import 'bootstrap';
 
 * {
   -webkit-box-sizing: border-box;
@@ -267,14 +266,14 @@ a.pure-button-primary {
 #new_user {
   text-align: center;
 
-  #user_avatar {
-    width: 25%;
-    margin: 0 auto;
-  }
-  #user_name, #user_email, #user_password {
-    width: 50%;
-  }
 
+}
+#user_avatar {
+  width: 25%;
+  margin: 0 auto;
+}
+#user_name, #user_email, #user_password {
+  width: 50%;
 }
 
 .login-button:hover, .login-button:visited {
