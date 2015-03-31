@@ -276,7 +276,7 @@ a.pure-button-primary {
   width: 50%;
 }
 
-.login-button:hover, .login-button:visited {
+.login-button:hover, .login-button:visited, .login-button:link {
   text-decoration: none;
   color: #34495e;
 }
@@ -289,6 +289,12 @@ a.pure-button-primary {
 .login_form{
   background-color: rgba(255,255,255,.1);
   border: 3px solid white;
+  padding:0 0 25px 0;
+  border-radius: 5px;
+}
+.login_form h2 {
+    font-weight: 100;
+    color: white;
 }
 /*
  * -- DESKTOP (AND UP) MEDIA QUERIES --
