@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-    root 'welcome#index'
+    root 'welcome#parallax'
+    get '/parallax', to: 'welcome#parallax'
     resources :documents
     resources :users
 

@@ -21,11 +21,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
           session[:user_id] = @user.id
-          redirect_to root_path
+          redirect_to users_path
           flash[:notice] = 'Thanks For Signing Up!'
     else
       if @user.errors.any?
-        flash[:notice] = @user.errors.full_messages
+        flash[:alert] = @user.errors.full_messages
       end
           # flash[:alert] = "Whoops That Didn't Work!"
           redirect_to root_path
