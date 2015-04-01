@@ -15,7 +15,7 @@ class WelcomeController < ApplicationController
     @user = User.new
       render :layout => false
           if current_user
-            redirect_to users_path
+            # redirect_to users_path
           end
   end
 
