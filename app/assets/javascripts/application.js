@@ -80,7 +80,7 @@ function navLinks(){
     });
 
     $('.fit_width').on('click', function(){
-        viewer.zoom(Crocodoc.ZOOM_FIT_WIDTH);
+        viewer.zoom(Crocodoc.ZOOM_AUTO);
     });
 } //PDF VIEWER LINK FUNCTIONS//
 
@@ -222,6 +222,7 @@ function allOnClicks(){
         'fit screen (fit screen)': zoom_fit_height,
         'show all (show all)': zoom_fit_height,
         'fit width': zoom_width,
+        'fit with': zoom_width,
         'exit (exit)(fullscreen)': exit_fullscreen,
 
         //Layout View//
