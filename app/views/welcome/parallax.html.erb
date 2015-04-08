@@ -25,11 +25,14 @@
 
 
 
-
 <div class="header">
   <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
     <a class="pure-menu-heading" href="">VoicePDF</a>
   </div>
+  
+  <%= flash[:notice] if flash[:notice] %>
+  <%= flash[:alert] if flash[:alert] %>
+
 </div>
 
 <div class="splash-container">

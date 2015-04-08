@@ -78,6 +78,10 @@ function navLinks(){
         viewer.zoom(Crocodoc.ZOOM_FIT_HEIGHT);
 
     });
+
+    $('.fit_width').on('click', function(){
+        viewer.zoom(Crocodoc.ZOOM_FIT_WIDTH);
+    });
 } //PDF VIEWER LINK FUNCTIONS//
 
 function hideElements(){
@@ -158,6 +162,10 @@ function allOnClicks(){
         $('.zoom_in_link').trigger('click')
     };
 
+    var zoom_width = function(){
+        $('.zoom_width').trigger('click')
+    };
+
     var single_page = function (){
         $('.single_page_link').trigger('click')
     };
@@ -213,6 +221,7 @@ function allOnClicks(){
         'zoom fit (zoom fit)': zoom_fit_height,
         'fit screen (fit screen)': zoom_fit_height,
         'show all (show all)': zoom_fit_height,
+        'fit width': zoom_width,
         'exit (exit)(fullscreen)': exit_fullscreen,
 
         //Layout View//
