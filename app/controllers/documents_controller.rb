@@ -18,23 +18,45 @@ class DocumentsController < ApplicationController
 
   end
 
+
+
+
+
   def create
     @document = Document.new(doc_params)
     @document.user_id = current_user.id
     @document.pdf_file_path = params[:path]
+    @document.cover_file_name
+
     respond_to do |f|
 
       sleep(1.0)
-      if @document.save
-        f.html{
-          redirect_to user_path(@document.user_id)
-          flash[:notice] = 'New Document Uploaded!'
-        }
+      if @document.cover_file_name.blank?
+        if @document.save
+          f.html{
+            redirect_to user_path(@document.user_id)
+            flash[:notice] = 'New Document Uploaded!'
+          }
+        else
+          f.html{
+            redirect_to :back
+            flash[:notice] = 'Document Failed To Upload!' }
+          f.js
+        end
       else
-        f.html{
-          redirect_to :back
-          flash[:notice] = 'Document Failed To Upload!' }
-        f.js
+        p 'test'
+        @document.pdf_from_url = @document.cover_file_name
+        if @document.save
+          f.html{
+            redirect_to user_path(@document.user_id)
+            flash[:notice] = 'New Document Uploaded!'
+          }
+        else
+          f.html{
+            redirect_to :back
+            flash[:notice] = 'Document Failed To Upload!' }
+          f.js
+        end
       end
 
     end
@@ -98,7 +120,7 @@ class DocumentsController < ApplicationController
   end
 
   def doc_params
-    params.require(:document).permit(:title, :description, :pdf, :pdf_file_path, :cover).merge(user_id: current_user.id)
+    params.require(:document).permit(:title, :description, :pdf, :pdf_file_path, :cover, :cover_file_name).merge(user_id: current_user.id)
   end
 
   def doc_title_params

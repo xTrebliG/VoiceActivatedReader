@@ -1,5 +1,5 @@
 class Document < ActiveRecord::Base
-
+  require 'open-uri'
   belongs_to  :user
 
   validates_presence_of :title
@@ -15,7 +15,10 @@ class Document < ActiveRecord::Base
   has_attached_file :cover
 
   validates_attachment_content_type :pdf, content_type: 'application/pdf'
-  validates_attachment_presence :pdf
+  # validates_attachment_presence :pdf
 
+  def pdf_from_url=url
+    self.pdf = open(url)
+  end
 
 end
