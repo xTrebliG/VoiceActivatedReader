@@ -4,6 +4,7 @@ $( window ).load(function() {
     $('#login-button').click(function() {
        $(this).fadeOut();
         $('.login_form').fadeIn();
+        $('.splash-head').css('marginTop', '-20%');
 
     });
     annyang.start();

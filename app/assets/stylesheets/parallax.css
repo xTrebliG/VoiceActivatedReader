@@ -287,7 +287,7 @@ a.pure-button-primary {
 .login_form h2 {
     font-weight: 100;
     color: white;
-    width: 30%;
+    width: 50%;
     margin: 0 auto;
 
 
@@ -297,7 +297,7 @@ a.pure-button-primary {
     font-weight: 100;
     color: white;
     background-color: rgba(0, 0 , 0, .4);
-    width: 30%;
+    width: 50%;
     margin: 0 auto;
     border-radius: 2px;
     padding: 5px;
