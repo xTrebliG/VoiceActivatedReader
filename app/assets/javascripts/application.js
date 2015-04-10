@@ -32,7 +32,7 @@ $(document).on('page:load',function(){
         annyang.addCommands(commands);
         annyang.debug();
     }
-
+    checkForTitle()
 });
 
 
@@ -45,6 +45,8 @@ window.onload = function(){
         annyang.addCommands(commands);
         annyang.debug();
     }
+    checkForTitle()
+
 
 };
 
@@ -90,7 +92,7 @@ function navLinks(){
 function hideElements(){
     setTimeout(function(){
         $('.flashes').fadeOut();
-    }, 1500);
+    }, 2500);
 
     $('.user_edit').hide();
     $('.hide_me').hide();
@@ -264,3 +266,17 @@ function allOnClicks(){
 
 //END COMMANDS//
 
+function checkForTitle(){
+    if( $('#document_title').length <= 1 ) {
+        $('.new_doc_submit').addClass('disabled');
+    }
+
+    $('#document_title').on('change', function(){
+        if ($(this).val() ){
+            $('.new_doc_submit').removeClass('disabled');
+        } else{
+            $('.new_doc_submit').addClass('disabled');
+        }
+    })
+
+}
