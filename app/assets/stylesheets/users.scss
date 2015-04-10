@@ -70,6 +70,19 @@
 
   .caption-num1 {
     transform: translateY(-250px) translateY(-100%);
+
+    a:hover {
+//      color: white;
+
+    }
+    a:link {
+      color: white;
+      text-decoration: none;
+    }
+    a:visited {
+      color: white;
+      text-decoration: none;
+    }
   }
   .image-container-num1:hover .caption-num1 {
     transform: translateY(-250px);

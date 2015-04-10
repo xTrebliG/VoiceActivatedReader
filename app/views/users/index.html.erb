@@ -55,7 +55,7 @@
                       <%= link_to image_tag(file.pdf(:cover)), document_path(file.id) %>
                     </div>
                     <div class="caption caption-num1">
-                      <span class="bottom"><%= file.title%></span>
+                      <span class="bottom"><%= link_to file.title, document_path(file.id)%></span>
                     </div>
                   </div>
 
