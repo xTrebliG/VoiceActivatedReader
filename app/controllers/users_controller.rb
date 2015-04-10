@@ -29,7 +29,7 @@ class UsersController < ApplicationController
       end
           # flash[:alert] = "Whoops That Didn't Work!"
           redirect_to root_path
-      end
+    end
   end
 
   def show

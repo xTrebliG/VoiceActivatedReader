@@ -3,6 +3,7 @@ class DocumentsController < ApplicationController
   require "webrick/https"
   skip_before_filter  :verify_authenticity_token
 
+
   def index
     if current_user
       redirect_to users_path
@@ -40,7 +41,8 @@ class DocumentsController < ApplicationController
         else
           f.html{
             redirect_to :back
-            flash[:notice] = 'Document Failed To Upload!' }
+              flash[:alert] = @document.errors.full_messages.to_sentence
+            }
           f.js
         end
       else
@@ -54,7 +56,8 @@ class DocumentsController < ApplicationController
         else
           f.html{
             redirect_to :back
-            flash[:notice] = 'Document Failed To Upload!' }
+            flash[:alert] = @document.errors.full_messages.to_sentence
+          }
           f.js
         end
       end

@@ -25,12 +25,14 @@
 
 $(document).on('page:load',function(){
    hideElements();
+    newFormUploadType();
     $('.best_in_place').best_in_place();
     allOnClicks();
     if (annyang) {
         annyang.addCommands(commands);
         annyang.debug();
     }
+
 });
 
 
@@ -38,6 +40,7 @@ window.onload = function(){
     hideElements();
     $('.best_in_place').best_in_place();
     allOnClicks();
+    newFormUploadType();
     if (annyang) {
         annyang.addCommands(commands);
         annyang.debug();
@@ -95,8 +98,29 @@ function hideElements(){
     $('.after_view_command').hide();
 
 
+
 } //ELEMENTS THAT NEED TO BE HIDDEN ON PAGE LOAD//
 
+function newFormUploadType(){
+    $('.url-upload').hide();
+    $('.computer-upload').hide();
+
+    $('.upload-by-url').on('click', function(e){
+        $('.computer-upload').hide();
+        $('.upload-by-computer').removeClass('disabled');
+        e.preventDefault();
+        $('.upload-by-url').addClass('disabled');
+        $('.url-upload').show();
+    });
+
+    $('.upload-by-computer').on('click', function(e){
+        $('.url-upload').hide();
+        $('.upload-by-url').removeClass('disabled');
+        e.preventDefault();
+        $('.upload-by-computer').addClass('disabled');
+        $('.computer-upload').show();
+    });
+}
 
 
 //ON CLICK FUNCTIONS//
