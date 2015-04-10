@@ -295,12 +295,7 @@ a.pure-button-primary {
 
 .login_form h4 {
     font-weight: 100;
-    color: white;
-    background-color: rgba(0, 0 , 0, .4);
-    width: 50%;
-    margin: 0 auto;
-    border-radius: 2px;
-    padding: 5px;
+    color: #34495e;
 }
 
 /*
