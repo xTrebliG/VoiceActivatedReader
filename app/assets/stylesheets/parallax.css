@@ -76,10 +76,6 @@ a.pure-button-primary {
 }
 
 
-/*
- * -- MENU STYLES --
- * I want to customize how my .pure-menu looks at the top of the page
- */
 
 .home-menu {
   padding: 0.5em;
@@ -90,9 +86,7 @@ a.pure-button-primary {
   background: #050505;
 }
 .pure-menu.pure-menu-fixed {
-  /* Fixed menus normally have a border at the bottom. */
   border-bottom: none;
-  /* I need a higher z-index here because of the scroll-over effect. */
   z-index: 4;
 }
 
@@ -117,11 +111,6 @@ a.pure-button-primary {
 }
 
 
-/*
- * -- SPLASH STYLES --
- * This is the blue top section that appears on the page.
- */
-
 .splash-container {
 //  background: #1f8dd6;
   background-image: url('https://s3.amazonaws.com/voicepdf/images/deskimage.jpg');
@@ -135,6 +124,8 @@ a.pure-button-primary {
   left: 0;
   position: fixed !important;
 }
+
+
 
 .splash {
   /* absolute center .splash within .splash-container */
@@ -296,7 +287,22 @@ a.pure-button-primary {
 .login_form h2 {
     font-weight: 100;
     color: white;
+    width: 30%;
+    margin: 0 auto;
+
+
 }
+
+.login_form h4 {
+    font-weight: 100;
+    color: white;
+    background-color: rgba(0, 0 , 0, .4);
+    width: 30%;
+    margin: 0 auto;
+    border-radius: 2px;
+    padding: 5px;
+}
+
 /*
  * -- DESKTOP (AND UP) MEDIA QUERIES --
  * On desktops and other large devices, we want to over-ride some
