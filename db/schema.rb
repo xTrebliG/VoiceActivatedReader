@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20150319183215) do
     t.string   "pdf_content_type"
     t.integer  "pdf_file_size"
     t.datetime "pdf_updated_at"
-    t.string   "pdf_file_path"
+    t.string   "file_path"
     t.string   "cover_file_name"
     t.string   "cover_content_type"
     t.integer  "cover_file_size"

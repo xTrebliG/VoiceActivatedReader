@@ -28,19 +28,20 @@
 <div class="header">
   <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
     <a class="pure-menu-heading" href="">VoicePDF</a>
-  </div>
-  
-  <%= flash[:notice] if flash[:notice] %>
-  <%= flash[:alert] if flash[:alert] %>
-
+  </div>x
+    <% if flash[:alert] %>
+        <div class="flashes alert alert-danger">
+          <%= flash[:alert] %>
+        </div>
+     <% end %>
 </div>
 
 <div class="splash-container">
   <div class="splash">
     <h1 class="splash-head">VoicePDF</h1>
     <p class="splash-subhead">
-      Try it out!
-      Say Log in or Sign Up
+      Try it out,
+      Say Log in!
     </p>
     <p>
       <a href="#" class="pure-button pure-button-primary login-button" id="login-button">Log In!</a>
@@ -119,15 +120,6 @@
     <div class="pure-g">
       <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
         <%= render 'shared/new_user_form' %>
-      </div>
-
-      <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
-        <h4>Contact Us</h4>
-        <p>
-          At VoicePDF, our first thought is you! If you have any questions, advice, or just want to say hi, feel free to contact us!
-        </p>
-
-
       </div>
     </div>
 

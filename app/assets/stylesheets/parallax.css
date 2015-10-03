@@ -21,6 +21,10 @@ label {
   color: #34495e;
 }
 
+#new_user .form-control{
+    margin: 0 auto;
+}
+
 .pure-img-responsive {
   max-width: 100%;
   height: auto;
@@ -40,8 +44,18 @@ label {
   text-align: center;
 }
 
+.login_link{
+    width: 86px;
 
-
+}
+.login_form .form-control{
+    margin: 0 auto;
+    width: inherit;
+}
+.login_form h2{
+    padding-top: 25px;
+    padding-bottom: 5px;
+}
 
 .pure-form label {
   margin: 1em 0 0;
@@ -284,20 +298,33 @@ a.pure-button-primary {
   padding:0 0 25px 0;
   border-radius: 5px;
 }
+span#close-login{
+    float: right;
+}
 .login_form h2 {
-    font-weight: 100;
+    font-weight: 200;
     color: white;
     width: 50%;
     margin: 0 auto;
-
-
 }
-
+#close-login{
+    color: white;
+    padding: 0 15px;
+    cursor: pointer ;
+}
 .login_form h4 {
     font-weight: 100;
     color: #34495e;
 }
-
+.flashes{
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
+    margin-top: 33px;
+    height: 40px;
+    padding: 5px;
+    text-align: center;
+}
 /*
  * -- DESKTOP (AND UP) MEDIA QUERIES --
  * On desktops and other large devices, we want to over-ride some

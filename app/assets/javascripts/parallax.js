@@ -2,10 +2,15 @@
 $('.login_form').hide();
 $( window ).load(function() {
     $('#login-button').click(function() {
-       $(this).fadeOut();
+       $(this).hide();
         $('.login_form').fadeIn();
-        $('.splash-head').css('marginTop', '-20%');
+        //$('.splash-head').css('marginTop', '-20%');
+        $('.splash-head, .splash-subhead').hide();
 
+    });
+    $('#close-login').click(function(){
+        $('.login_form').hide();
+        $('.splash-head, .splash-subhead, #login-button').fadeIn();
     });
     annyang.start();
     if (annyang) {
